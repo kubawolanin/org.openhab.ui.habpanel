@@ -6721,7 +6721,7 @@ button.close {
     display: none !important;
   }
 }
-body {
+html {
   background: #111;
   background: url('//source.unsplash.com/random') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -6730,7 +6730,7 @@ body {
   background-size: cover;
 }
 .main.container {
-  background: rgba(17, 17, 17, 0.2);
+  background: rgba(17, 17, 17, 0.4);
   height: 100%;
   position: absolute;
 }
