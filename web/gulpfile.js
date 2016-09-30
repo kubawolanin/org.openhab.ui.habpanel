@@ -1,9 +1,15 @@
 var concat = require('gulp-concat');
+var cssmin = require('gulp-cssmin');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
+var less = require('gulp-less');
 var mainBowerFiles = require('gulp-main-bower-files');
+var path = require('path');
+var plumber = require('gulp-plumber');
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
 
 gulp.task('lint', function () {
@@ -12,7 +18,7 @@ gulp.task('lint', function () {
         .pipe(eslint.format());
 });
 
-gulp.task('server', function() {
+gulp.task('web-server', function() {
   gulp.src('./')
     .pipe(webserver({
       livereload: true,
@@ -20,6 +26,47 @@ gulp.task('server', function() {
       open: true
     }));
 });
+
+gulp.task('watch', function () {
+    gulp.watch([
+        './assets/**/*.less',
+        './vendor/**/*.less'
+    ], ['less']);
+});
+
+gulp.task('server', [
+    'watch',
+    'web-server'
+], function () {});
+
+gulp.task('less-assets', function () {
+    gulp.src('./assets/styles.less')
+        .pipe(plumber())
+        .pipe(less())
+        .pipe(gulp.dest('./'))
+        .pipe(cssmin())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./assets'));
+});
+
+gulp.task('less-vendor', function () {
+    gulp.src('./vendor/vendor.less')
+        .pipe(plumber())
+        .pipe(less())
+        .pipe(gulp.dest('./'))
+        .pipe(cssmin())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./vendor'));
+});
+
+gulp.task('less', [
+    'less-assets',
+    'less-vendor'
+], function () {});
 
 gulp.task('vendor-fonts', function() {
     return gulp.src([
@@ -29,7 +76,6 @@ gulp.task('vendor-fonts', function() {
 
 gulp.task('vendor-css', function() {
     return gulp.src([
-        'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/angular-gridster/dist/angular-gridster.min.css',
         'bower_components/angularjs-slider/dist/rzslider.min.css',
         'node_modules/n3-charts/build/LineChart.min.css'
@@ -117,17 +163,19 @@ gulp.task('codemirror-theme', function () {
     ]).pipe(gulp.dest('vendor/cm/theme'));
 });
 
-gulp.task('codemirror', ['codemirror-lib', 'codemirror-css', 'codemirror-addon-fold',
-          'codemirror-addon-edit', 'codemirror-mode-xml', 'codemirror-mode-javascript',
-          'codemirror-theme'], function () {
+gulp.task('codemirror', [
+        'codemirror-lib', 
+        'codemirror-css', 
+        'codemirror-addon-fold',
+        'codemirror-addon-edit', 
+        'codemirror-mode-xml', 
+        'codemirror-mode-javascript',
+        'codemirror-theme'
+    ], function () {});
 
-});
+gulp.task('vendor', [
+    'vendor-js',
+    'vendor-fonts'
+], function () {});
 
-gulp.task('vendor', ['vendor-js', 'vendor-css', 'vendor-fonts'], function () {
-
-});
-
-
-gulp.task('default', ['vendor', 'codemirror'], function () {
-
-});
+gulp.task('default', ['vendor', 'codemirror'], function () {});
