@@ -43,7 +43,7 @@ gulp.task('less-assets', function () {
     gulp.src('./assets/styles.less')
         .pipe(plumber())
         .pipe(less())
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./assets'))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -55,7 +55,7 @@ gulp.task('less-vendor', function () {
     gulp.src('./vendor/vendor.less')
         .pipe(plumber())
         .pipe(less())
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./vendor'))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -72,14 +72,6 @@ gulp.task('vendor-fonts', function() {
     return gulp.src([
         'bower_components/bootstrap/dist/fonts/*'
     ]).pipe(gulp.dest('fonts'));
-});
-
-gulp.task('vendor-css', function() {
-    return gulp.src([
-        'bower_components/angular-gridster/dist/angular-gridster.min.css',
-        'bower_components/angularjs-slider/dist/rzslider.min.css',
-        'node_modules/n3-charts/build/LineChart.min.css'
-    ]).pipe(concat('vendor.css')).pipe(gulp.dest('vendor'));
 });
 
 gulp.task('vendor-js', function() {

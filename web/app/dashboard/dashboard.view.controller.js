@@ -22,7 +22,8 @@
 
     var fullscreenhandler = Fullscreen.$on('FBFullscreen.change', function(evt, enabled) {
         vm.fullscreen = enabled;
-    })
+    });
+
     $scope.$on('$destroy', function() {
         fullscreenhandler();
         //OHService.clearAllLongPollings();
@@ -41,8 +42,6 @@
 
     ////////////////
 
-
-
     function activate() {
         $timeout(function () {
             OHService.reloadItems();
@@ -60,4 +59,3 @@
     };
   }
 // });
-
