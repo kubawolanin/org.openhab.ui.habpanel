@@ -1071,11 +1071,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #272727;
+  background-color: #111;
 }
 input,
 button,
@@ -1086,12 +1086,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #0db9f0;
+  color: #abc;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #0981a7;
+  color: #7a95af;
   text-decoration: underline;
 }
 a:focus {
@@ -1119,7 +1119,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #272727;
+  background-color: #111;
   border: 1px solid #ddd;
   border-radius: 0;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1323,14 +1323,14 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #777777;
+  color: #ccc;
 }
 .text-primary {
-  color: #0db9f0;
+  color: #337ab7;
 }
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #0a94c0;
+  color: #286090;
 }
 .text-success {
   color: #3c763d;
@@ -1362,11 +1362,11 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #0db9f0;
+  background-color: #337ab7;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #0a94c0;
+  background-color: #286090;
 }
 .bg-success {
   background-color: #dff0d8;
@@ -2241,7 +2241,7 @@ table {
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #777777;
+  color: #ccc;
   text-align: left;
 }
 th {
@@ -2279,7 +2279,7 @@ th {
   border-top: 2px solid #ddd;
 }
 .table .table {
-  background-color: #272727;
+  background-color: #111;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3101,26 +3101,26 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #fff;
-  background-color: #0db9f0;
-  border-color: #0ca6d8;
+  background-color: #337ab7;
+  border-color: #2e6da4;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #0a94c0;
-  border-color: #05495f;
+  background-color: #286090;
+  border-color: #122b40;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #0a94c0;
-  border-color: #097a9e;
+  background-color: #286090;
+  border-color: #204d74;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #0a94c0;
-  border-color: #097a9e;
+  background-color: #286090;
+  border-color: #204d74;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -3132,8 +3132,8 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
   color: #fff;
-  background-color: #097a9e;
-  border-color: #05495f;
+  background-color: #204d74;
+  border-color: #122b40;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3149,11 +3149,11 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #0db9f0;
-  border-color: #0ca6d8;
+  background-color: #337ab7;
+  border-color: #2e6da4;
 }
 .btn-primary .badge {
-  color: #0db9f0;
+  color: #337ab7;
   background-color: #fff;
 }
 .btn-success {
@@ -3385,7 +3385,7 @@ fieldset[disabled] .btn-danger.focus {
   background-color: #fff;
 }
 .btn-link {
-  color: #0db9f0;
+  color: #abc;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3406,7 +3406,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #0981a7;
+  color: #7a95af;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -3552,7 +3552,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #0db9f0;
+  background-color: #337ab7;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -3986,7 +3986,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #0db9f0;
+  border-color: #abc;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4017,7 +4017,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #272727;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4063,7 +4063,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #272727;
+    border-bottom-color: #111;
   }
 }
 .nav-pills > li {
@@ -4079,7 +4079,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #0db9f0;
+  background-color: #337ab7;
 }
 .nav-stacked > li {
   float: none;
@@ -4131,7 +4131,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #272727;
+    border-bottom-color: #111;
   }
 }
 .tab-content > .tab-pane {
@@ -4703,7 +4703,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #0db9f0;
+  color: #abc;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -4724,7 +4724,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #0981a7;
+  color: #7a95af;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -4736,8 +4736,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #0db9f0;
-  border-color: #0db9f0;
+  background-color: #337ab7;
+  border-color: #337ab7;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4854,11 +4854,11 @@ a.label:focus {
   background-color: #5e5e5e;
 }
 .label-primary {
-  background-color: #0db9f0;
+  background-color: #337ab7;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #0a94c0;
+  background-color: #286090;
 }
 .label-success {
   background-color: #5cb85c;
@@ -4922,7 +4922,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #0db9f0;
+  color: #abc;
   background-color: #fff;
 }
 .list-group-item > .badge {
@@ -4982,7 +4982,7 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #272727;
+  background-color: #111;
   border: 1px solid #ddd;
   border-radius: 0;
   -webkit-transition: border 0.2s ease-in-out;
@@ -4997,7 +4997,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #0db9f0;
+  border-color: #abc;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -5111,7 +5111,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #0db9f0;
+  background-color: #337ab7;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -5274,8 +5274,8 @@ button.list-group-item {
 .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #0db9f0;
-  border-color: #0db9f0;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -5291,7 +5291,7 @@ button.list-group-item {
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
 .list-group-item.active:focus .list-group-item-text {
-  color: #cdf1fc;
+  color: #c7ddef;
 }
 .list-group-item-success {
   color: #3c763d;
@@ -5671,22 +5671,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #0db9f0;
+  border-color: #337ab7;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #0db9f0;
-  border-color: #0db9f0;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #0db9f0;
+  border-top-color: #337ab7;
 }
 .panel-primary > .panel-heading .badge {
-  color: #0db9f0;
+  color: #337ab7;
   background-color: #fff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #0db9f0;
+  border-bottom-color: #337ab7;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -5960,7 +5960,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6078,7 +6078,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6721,9 +6721,26 @@ button.close {
     display: none !important;
   }
 }
-html,
 body {
-  background-color: #272727;
+  background: #111;
+  background: url('//source.unsplash.com/random') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.main.container {
+  background: rgba(17, 17, 17, 0.2);
+  height: 100%;
+  position: absolute;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 300;
+  margin: 10px 0;
 }
 h1,
 h2 {
@@ -6742,7 +6759,7 @@ a:hover {
   cursor: pointer;
 }
 input {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   padding: 4px;
 }
@@ -6765,7 +6782,7 @@ input {
   cursor: move;
 }
 .dash-card {
-  margin: 0px 0px 0px 0px;
+  margin: 0;
   min-height: 100px !important;
   width: 100%;
   float: left;
@@ -6801,6 +6818,9 @@ input {
   height: 100%;
   z-index: -1000;
 }
+.dashboard {
+  margin: -5px;
+}
 .controls {
   margin-bottom: 20px;
 }
@@ -6812,7 +6832,7 @@ ul {
 }
 .box {
   height: 100%;
-  background-color: #234;
+  background: rgba(34, 51, 68, 0.9);
   color: #def;
 }
 .box-design {
@@ -6820,7 +6840,7 @@ ul {
 }
 .box-header {
   display: table;
-  background-color: ;
+  background-color: #567;
   padding: 0 5px 0 0;
   border-right: 1px solid #567;
   border-bottom: 1px solid #567;
@@ -6858,15 +6878,11 @@ ul {
 .settings-btn i {
   font-size: 3rem;
 }
-a {
-  color: #abc;
-}
 form {
   margin-bottom: 0;
 }
 .gridster {
   padding: 2px;
-  /*border: 1px solid #ccc;*/
 }
 .gridster .gridster-item:hover .handle-se {
   border-width: 0 0 3rem 3rem !important;
@@ -7039,7 +7055,7 @@ form {
 }
 .colorpicker-content .axis text {
   fill: #89a;
-  font: 10px sans-serif;
+  font: 10px "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .colorpicker-content .s .tick:last-of-type text,
 .colorpicker-content .l .tick:last-of-type text {
@@ -7049,7 +7065,7 @@ form {
   width: 900px;
   height: 90px;
   float: left;
-  margin: 0px 30px 0 30px;
+  margin: 0 30px;
 }
 /* Big Mr. Robot-style slider :)
 see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
@@ -7105,12 +7121,15 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
 .bigslider .rzslider .rz-bar.rz-selection {
   display: none;
 }
+.rzslider .rz-pointer {
+  outline: none;
+}
 .chart-content .chart .grid .tick > line {
   stroke: #456;
 }
 .chart-content .chart .axis > .tick > text {
   fill: #89a;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .chart-content .legend-label {
   color: #def;
@@ -7129,7 +7148,7 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
   width: 100%;
 }
 .template-nobkg {
-  background: #272727;
+  background: #111;
   height: 100%;
 }
 .localconfig {

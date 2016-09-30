@@ -1,11 +1,21 @@
-html,
 body {
-    background-color: @body-bg;
+    background: @body-bg;
+    background: url('//source.unsplash.com/random') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.main.container {
+    background: fade(@body-bg, 20%);
+    height: 100%;
+    position: absolute;
 }
 
 h1, h2, h3, h4, h5 {
     font-weight: 300;
-    //color: @body-color;
+    margin: 10px 0;
 }
 
 h1, h2 {
