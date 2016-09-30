@@ -1,14 +1,24 @@
-var gulp = require('gulp');
 var concat = require('gulp-concat');
+var eslint = require('gulp-eslint');
+var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
 var mainBowerFiles = require('gulp-main-bower-files');
 var uglify = require('gulp-uglify');
-var eslint = require('gulp-eslint');
+var webserver = require('gulp-webserver');
 
 gulp.task('lint', function () {
     return gulp.src(['app/**/*.js'])
         .pipe(eslint())
         .pipe(eslint.format());
+});
+
+gulp.task('server', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: true
+    }));
 });
 
 gulp.task('vendor-fonts', function() {
@@ -72,7 +82,6 @@ gulp.task('codemirror-css', function () {
         'bower_components/codemirror/lib/codemirror.css'
     ]).pipe(gulp.dest('vendor/cm/lib'));
 });
-
 
 gulp.task('codemirror-addon-fold', function () {
     return gulp.src([
