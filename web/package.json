@@ -44,7 +44,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "less-plugin-glob": "^1.1.1"
   },
   "dependencies": {
     "n3-charts": "^2.0.28"

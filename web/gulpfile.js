@@ -29,6 +29,7 @@ gulp.task('web-server', function() {
 
 gulp.task('watch', function () {
     gulp.watch([
+        './app/widgets/**/*.less',
         './assets/**/*.less',
         './vendor/**/*.less'
     ], ['less']);
@@ -42,8 +43,9 @@ gulp.task('server', [
 gulp.task('less-assets', function () {
     gulp.src('./assets/styles.less')
         .pipe(plumber())
-        .pipe(less())
-        .pipe(gulp.dest('./assets'))
+        .pipe(less({
+            plugins: [require('less-plugin-glob')]
+        }))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -55,7 +57,6 @@ gulp.task('less-vendor', function () {
     gulp.src('./vendor/vendor.less')
         .pipe(plumber())
         .pipe(less())
-        .pipe(gulp.dest('./vendor'))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
