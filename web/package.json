@@ -38,14 +38,14 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-eslint": "^3.0.1",
     "gulp-filter": "^4.0.0",
-    "gulp-less": "^3.1.0",
     "gulp-main-bower-files": "1.5.3",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-glob": "^1.0.6",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
-    "gulp-webserver": "^0.9.1",
-    "less-plugin-glob": "^1.1.1"
+    "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
     "n3-charts": "^2.0.28"

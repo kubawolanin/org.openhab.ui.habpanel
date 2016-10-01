@@ -1,0 +1,10 @@
+// Bootstrap lib
+@import "less/variables.scss";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+@import "less/common.scss";
+@import "less/dashboard.scss";
+@import "less/widgets.scss";
+@import "less/local-config.scss";
+
+@import "../app/widgets/**/*.scss";

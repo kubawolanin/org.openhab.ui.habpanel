@@ -3,7 +3,8 @@ var cssmin = require('gulp-cssmin');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
+var sassGlob = require('gulp-sass-glob');
 var mainBowerFiles = require('gulp-main-bower-files');
 var path = require('path');
 var plumber = require('gulp-plumber');
@@ -29,10 +30,10 @@ gulp.task('web-server', function() {
 
 gulp.task('watch', function () {
     gulp.watch([
-        './app/widgets/**/*.less',
-        './assets/**/*.less',
-        './vendor/**/*.less'
-    ], ['less']);
+        './app/widgets/**/*.scss',
+        './assets/**/*.scss',
+        './vendor/**/*.scss'
+    ], ['sass']);
 });
 
 gulp.task('server', [
@@ -40,12 +41,11 @@ gulp.task('server', [
     'web-server'
 ], function () {});
 
-gulp.task('less-assets', function () {
-    gulp.src('./assets/styles.less')
+gulp.task('sass-assets', function () {
+    gulp.src('./assets/styles.scss')
         .pipe(plumber())
-        .pipe(less({
-            plugins: [require('less-plugin-glob')]
-        }))
+        .pipe(sassGlob())
+        .pipe(sass())
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -53,10 +53,10 @@ gulp.task('less-assets', function () {
         .pipe(gulp.dest('./assets'));
 });
 
-gulp.task('less-vendor', function () {
-    gulp.src('./vendor/vendor.less')
+gulp.task('sass-vendor', function () {
+    gulp.src('./vendor/vendor.scss')
         .pipe(plumber())
-        .pipe(less())
+        .pipe(sass())
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -64,14 +64,15 @@ gulp.task('less-vendor', function () {
         .pipe(gulp.dest('./vendor'));
 });
 
-gulp.task('less', [
-    'less-assets',
-    'less-vendor'
+gulp.task('sass', [
+    'sass-assets',
+    'sass-vendor'
 ], function () {});
 
 gulp.task('vendor-fonts', function() {
     return gulp.src([
-        'bower_components/bootstrap/dist/fonts/*'
+        'bower_components/bootstrap-sass/assets/fonts/*/**',
+        'bower_components/roboto-fontface/fonts/*/**'
     ]).pipe(gulp.dest('fonts'));
 });
 

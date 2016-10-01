@@ -1,12 +1,9 @@
-// (function() {
-// 'use strict';
-
   angular
         .module('app')
         .controller('DashboardViewCtrl', DashboardViewController);
 
-  DashboardViewController.$inject = ['$scope', '$rootScope', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen'];
-  function DashboardViewController($scope, $rootScope, $timeout, dashboard, PersistenceService, OHService, Fullscreen) {
+  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen'];
+  function DashboardViewController($scope, $location, $rootScope, $timeout, dashboard, PersistenceService, OHService, Fullscreen) {
     var vm = this;
     vm.dashboard = dashboard;
 
@@ -37,25 +34,27 @@
         });
     });
 
-
     activate();
 
     ////////////////
 
     function activate() {
-        $timeout(function () {
+        $timeout(function() {
             OHService.reloadItems();
         });
         iNoBounce.enable();
       //Fullscreen.all();
     }
 
-    vm.refresh = function () {
+    vm.refresh = function() {
         OHService.reloadItems();
     };
 
-    vm.goFullscreen = function () {
+    vm.goFullscreen = function() {
         Fullscreen.toggleAll();
     };
+
+    vm.toggleEdit = function() {
+        $location.url("/edit/" + dashboard.id);
+    };
   }
-// });
