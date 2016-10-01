@@ -1,6 +1,12 @@
 html {
     background: @body-bg;
-    background: url('//source.unsplash.com/random') no-repeat center center fixed; 
+}
+
+html.image-bg {
+    background-image: url('//source.unsplash.com/random');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -76,7 +82,7 @@ input {
     margin: 0 0 0 -15px;
     padding: 15px;
     height: 100%;
-    width: calc(100% + 30px);
+    width: ~"calc(100% + 30px)";
     cursor: pointer;
 }
 

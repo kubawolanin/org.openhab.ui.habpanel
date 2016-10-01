@@ -6723,7 +6723,12 @@ button.close {
 }
 html {
   background: #111;
-  background: url('//source.unsplash.com/random') no-repeat center center fixed;
+}
+html.image-bg {
+  background-image: url('//source.unsplash.com/random');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6792,7 +6797,7 @@ input {
   margin: 0 0 0 -15px;
   padding: 15px;
   height: 100%;
-  width: calc(130%);
+  width: calc(100% + 30px);
   cursor: pointer;
 }
 .dash-card .handle-se {
@@ -7004,8 +7009,8 @@ form {
   margin: auto;
   filter: opacity(15%);
   -webkit-filter: opacity(15%);
-  max-width: calc(80%);
-  /*max-height: calc(100% - 20px);*/
+  max-width: calc(100% - 20px);
+  /*max-height: ~"calc(100% - 20px)";*/
 }
 .icon-tile-backdrop.colorize {
   filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
@@ -7155,13 +7160,13 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
   position: absolute;
   top: 64px;
   left: 10px;
-  width: calc(80%);
-  height: calc(24%);
+  width: calc(100% - 20px);
+  height: calc(100% - 76px);
 }
 .localconfig .CodeMirror {
   position: absolute;
   top: 130px;
   left: 10px;
-  height: calc(-50%);
-  width: calc(80%);
+  height: calc(100% - 150px);
+  width: calc(100% - 20px);
 }
