@@ -4,7 +4,6 @@ $body-bg:    #000;
 $body-color: #ccc;
 
 $primary-color: #0db9f0;
-$link-color: #abc; // Bootstrap variable
 
 $box-bg:     #234;
 
@@ -50,6 +49,9 @@ $brand-success:         #5cb85c;
 $brand-info:            #5bc0de;
 $brand-warning:         #f0ad4e;
 $brand-danger:          #d9534f;
+
+$link-color: #abc; // Bootstrap variable
+$link-hover-decoration: none;
 
 $font-family-base: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
