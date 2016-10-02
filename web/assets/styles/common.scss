@@ -63,10 +63,21 @@ input {
   height: 100%;
   -webkit-overflow-scrolling: true;
 }
+
 .dash-buttons {
   font-size: 30px;
   margin-top: 16px;
   margin-right: -15px;
+
+  &.pull-right {
+    margin-right: 5px;
+  }
+}
+
+.dash-edit {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }
 
 .dash-buttons em {
@@ -119,4 +130,8 @@ input {
   width: 100%;
   height: 100%;
   z-index: -1000;
+}
+
+.modal-header h3 {
+    margin: 0;
 }
