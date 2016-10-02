@@ -34,15 +34,15 @@ ul {
 }
 
 .box-design {
-  border: 1px solid $widget-color;
+  border: 1px solid $widget-design-bg;
 }
 
 .box-header {
   display: table;
-  background-color: $widget-color;
+  background-color: $widget-design-bg;
   padding: 0 5px 0 0;
-  border-right: 1px solid $widget-color;
-  border-bottom: 1px solid $widget-color;
+  border-right: 1px solid $widget-design-bg;
+  border-bottom: 1px solid $widget-design-bg;
   cursor: move;
   position: absolute;
   opacity: .4;

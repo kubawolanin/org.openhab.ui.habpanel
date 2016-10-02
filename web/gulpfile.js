@@ -1,14 +1,15 @@
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
-var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
 var mainBowerFiles = require('gulp-main-bower-files');
 var path = require('path');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
+var sassGlob = require('gulp-sass-glob');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
@@ -72,7 +73,7 @@ gulp.task('sass', [
 gulp.task('vendor-fonts', function() {
     return gulp.src([
         'bower_components/bootstrap-sass/assets/fonts/*/**',
-        'bower_components/roboto-fontface/fonts/*/**'
+        'bower_components/roboto-fontface/fonts/*/Roboto-Regular.*'
     ]).pipe(gulp.dest('fonts'));
 });
 
