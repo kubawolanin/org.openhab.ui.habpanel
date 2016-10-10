@@ -1,0 +1,57 @@
+@import "_climaicon.scss";
+
+.weather-row {
+  padding: 1em;
+  margin: 0 10px;
+
+  // [class*="col-"] {
+  //   display: -webkit-box;
+  //   display: -webkit-flex;
+  //   display: -ms-flexbox;
+  //   display:         flex;
+  // }
+}
+
+.weather-icon {
+  font-size: 6em;
+  text-align: right;
+  padding-left: 0;
+}
+
+.weather-condition {
+  text-align: left;
+
+  &:first-child {
+    border-top: 1px solid rgba(255,255,255,.4);
+  }
+
+  span {
+    width: 100%;
+    display: block;
+  }
+
+  span.weather-city {
+    font-size: 2em;
+  }
+
+  span.weather-condition-label {
+    font-size: 1.5em;
+    color: rgba(255,255,255,.7);
+  }
+}
+
+.weather-temperature {
+  text-align: left;
+  padding-left: 0;
+  span {
+    font-size: 4em;
+  }
+}
+
+.weather-details {
+  text-align: center;
+  font-size: 1.25em;
+  padding: 1em;
+  color: rgba(255,255,255,.6);
+  margin: 0;
+}

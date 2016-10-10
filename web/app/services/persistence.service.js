@@ -58,7 +58,9 @@
 
         function getDashboard(id) {
             if (!$rootScope.dashboards) {
-                return loadDashboards().then(function () { return $filter('filter')($rootScope.dashboards, {id: id}, true)[0]; });
+                return loadDashboards().then(function () { 
+                    return $filter('filter')($rootScope.dashboards, {id: id}, true)[0]; 
+                });
             }
 
             return $filter('filter')($rootScope.dashboards, {id: id}, true)[0];

@@ -13,6 +13,9 @@
         'oc.lazyLoad',
         'angular-clipboard'
     ])
+    .value('restApi', {
+        host: 'http://192.168.0.20:8080'
+    })
     .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
 
@@ -103,8 +106,5 @@
             .otherwise({
                 redirectTo: '/'
             });
-
-
-
     }])
 })();

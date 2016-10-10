@@ -31,7 +31,7 @@ gulp.task('web-server', function() {
 
 gulp.task('watch', function () {
     gulp.watch([
-        './app/widgets/**/*.scss',
+        './app/widgets/**/[^_]*.scss', // omit internal styles starting with "_"
         './assets/styles/**/*.scss',
         './vendor/**/*.scss'
     ], ['sass']);
