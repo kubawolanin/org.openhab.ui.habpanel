@@ -1,0 +1,31 @@
+<div class="weather-content">
+  <div class="row weather-row">
+    <div class="col-md-4 weather-icon">
+        <ng-include src="'assets/icons/climacons/sunFill.svg'">
+        </ng-include>
+    </div>
+    <div class="col-md-6 weather-condition">
+        <span class="weather-city">Kraków</span>
+        <span class="weather-condition-label">
+            Przejaśnienia
+        </span>
+    </div>
+    <div class="col-md-3 weather-temperature">
+        <span>{{vm.value}}°</span>
+    </div>
+    </div>
+    <div class="row weather-details">
+        <div class="col-md-4">
+            <i class="glyphicon glyphicon-flag"></i>
+            <span>8 km/h</span>
+        </div>
+        <div class="col-md-4">
+            <i class="glyphicon glyphicon-flag"></i>
+            <span>80%</span>
+        </div>
+        <div class="col-md-4">
+            <i class="glyphicon glyphicon-flag"></i>
+            <span>80%</span>
+        </div>
+    </div>
+</div>
