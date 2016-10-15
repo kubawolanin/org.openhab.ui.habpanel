@@ -13,6 +13,11 @@
             });
         });
 
+    /**
+     * Map used for transforming plain weather condition
+     * to specific icon from climacons collection
+     * @type {Object}
+     */
     var iconMap = {
         'thunder'                  : 'cloudLightning',
         'storm'                    : 'cloudLightningFill',
