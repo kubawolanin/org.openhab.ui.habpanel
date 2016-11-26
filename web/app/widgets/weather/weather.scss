@@ -1,29 +1,23 @@
 @import "_climaicon.scss";
 
-.weather-row {
-  padding: 1em;
-  margin: 0 10px;
+.weather-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 60px);
+}
 
-  // [class*="col-"] {
-  //   display: -webkit-box;
-  //   display: -webkit-flex;
-  //   display: -ms-flexbox;
-  //   display:         flex;
-  // }
+.weather-row {
+  margin: 0 10px;
+  width: 100%;
 }
 
 .weather-icon {
-  font-size: 6em;
-  text-align: right;
-  padding-left: 0;
+  padding: 0;
 }
 
 .weather-condition {
   text-align: left;
-
-  &:first-child {
-    border-top: 1px solid rgba(255,255,255,.4);
-  }
 
   span {
     width: 100%;
@@ -32,6 +26,7 @@
 
   span.weather-city {
     font-size: 2em;
+    padding-top: .625em;
   }
 
   span.weather-condition-label {
@@ -41,7 +36,7 @@
 }
 
 .weather-temperature {
-  text-align: left;
+  text-align: right;
   padding-left: 0;
   span {
     font-size: 4em;
@@ -49,9 +44,13 @@
 }
 
 .weather-details {
+  border-top: 1px solid rgba(255,255,255,.4);
   text-align: center;
   font-size: 1.25em;
   padding: 1em;
   color: rgba(255,255,255,.6);
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

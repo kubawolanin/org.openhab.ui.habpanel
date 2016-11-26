@@ -76,23 +76,30 @@
         var vm = this;
         this.widget = this.ngModel;
 
-        function updateValue() {
-            var item = OHService.getItem(vm.widget.temperatureItem);
+        var widgetItems = Object.keys(vm.widget).filter(
+            item => item.toLowerCase().indexOf('item') > 0
+        );
+
+        widgetItems.forEach(function(element, index) {
+            var item = vm.widget[element];
+            OHService.onUpdate($scope, item, function () {
+                updateValue(item);
+            });
+        });
+
+        function updateValue(widgetItem) {
+            var item = OHService.getItem(widgetItem);
+            console.log('item', item);
             if (!item) {
-                vm.value = "N/A";
+                vm[item + 'Value'] = "N/A";
                 return;
             }
             var value = item.state;
 
-            if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern)
-                value = sprintf(item.stateDescription.pattern, value);
-            vm.value = value; //iconMap[value];
+            vm[item + 'Value'] = value; // Math.floor(value); //iconMap[value];
+
+            console.log(vm, vm[widgetItem + 'Value']);
         }
-
-        OHService.onUpdate($scope, vm.widget.temperatureItem, function () {
-            updateValue();
-        });
-
     }
 
 
@@ -114,25 +121,14 @@
             precipitationItem : widget.precipitationItem,
             humidityItem      : widget.humidityItem,
             windSpeedItem     : widget.windSpeedItem,
-            windDirectionItem : widget.windSpeedItem,
+            windDirectionItem : widget.windDirectionItem,
             dewpointItem      : widget.dewpointItem,
             pressureItem      : widget.pressureItem,
             visibilityItem    : widget.visibilityItem,
             // background     : widget.background,
             // foreground     : widget.foreground,
             font_size         : widget.font_size,
-            nolinebreak       : widget.nolinebreak,
-            unit              : widget.unit,
-            format            : widget.format,
-            useserverformat   : widget.useserverformat,
-            backdrop_iconset  : widget.backdrop_iconset,
-            backdrop_icon     : widget.backdrop_icon,
-            backdrop_center   : widget.backdrop_center,
-            iconset           : widget.iconset,
-            icon              : widget.icon,
-            icon_size         : widget.icon_size,
-            icon_nolinebreak  : widget.icon_nolinebreak,
-            icon_replacestext : widget.icon_replacestext
+            animateIcon       : widget.animateIcon
         };
 
         $scope.dismiss = function() {
