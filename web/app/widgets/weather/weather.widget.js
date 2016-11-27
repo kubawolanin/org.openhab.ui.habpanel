@@ -50,8 +50,7 @@
         'thundershowers'           : 'cloudRainMoon',
         'snow-showers'             : 'cloudHailAltFill',
         'scattered-thundershowers' : 'cloudRainFill',
-        'unknown'                  : 'cloud',
-        'N/A'                      : 'cloud'
+        'unknown'                  : 'cloud'
     }
 
     widgetWeather.$inject = ['$rootScope', '$uibModal', 'OHService'];
@@ -98,7 +97,7 @@
 
             switch(itemName) {
                 case 'conditionItem':
-                    vm[itemName + 'Value'] = iconMap[value];
+                    vm[itemName + 'Value'] = iconMap[value] || 'cloud';
                     break;
                 case 'temperatureItem':
                     vm[itemName + 'Value'] = parseFloat(value).toFixed(0);
