@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'weather',
                 displayName: 'Weather',
-                description: 'A weather widget - displays the value of an openHAB item'
+                description: 'A simple weather widget for HABPanel'
             });
         });
 
@@ -51,6 +51,7 @@
         'snow-showers'             : 'cloudHailAltFill',
         'scattered-thundershowers' : 'cloudRainFill',
         'unknown'                  : 'cloud',
+        'N/A'                      : 'cloud'
     }
 
     widgetWeather.$inject = ['$rootScope', '$uibModal', 'OHService'];
@@ -105,7 +106,9 @@
                 case 'firstItem':
                 case 'secondItem':
                 case 'thirdItem':
-                    vm[itemName + 'Value'] = sprintf(item.stateDescription.pattern, value);
+                    if(item.stateDescription && item.stateDescription.pattern) {
+                        vm[itemName + 'Value'] = sprintf(item.stateDescription.pattern, value);
+                    }
                     vm[itemName + 'Icon'] = item.category || 'text';
                     break;
                 default: 
@@ -131,14 +134,9 @@
             row               : widget.row,
             conditionItem     : widget.conditionItem,
             temperatureItem   : widget.temperatureItem,
-            precipitationItem : widget.precipitationItem,
-            humidityItem      : widget.humidityItem,
-            windSpeedItem     : widget.windSpeedItem,
-            windDirectionItem : widget.windDirectionItem,
-            dewpointItem      : widget.dewpointItem,
-            pressureItem      : widget.pressureItem,
-            visibilityItem    : widget.visibilityItem,
-            font_size         : widget.font_size,
+            firstItem         : widget.firstItem,
+            secondItem        : widget.secondItem,
+            thirdItem         : widget.thirdItem,
             animateIcon       : widget.animateIcon
         };
 
