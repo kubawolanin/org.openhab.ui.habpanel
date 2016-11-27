@@ -17,7 +17,7 @@
         'snap'
     ])
     .value('restApi', {
-        host: 'http://192.168.0.20:8080'
+        host: 'http://192.168.0.34:8080'
     })
     .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');

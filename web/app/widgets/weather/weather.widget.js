@@ -83,22 +83,33 @@
         widgetItems.forEach(function(element, index) {
             var item = vm.widget[element];
             OHService.onUpdate($scope, item, function () {
-                updateValue(item);
+                updateValue(item, element);
             });
         });
 
-        function updateValue(widgetItem) {
+        function updateValue(widgetItem, itemName) {
             var item = OHService.getItem(widgetItem);
-            console.log('item', item);
             if (!item) {
-                vm[item + 'Value'] = "N/A";
+                vm[itemName + 'Value'] = "N/A";
                 return;
             }
             var value = item.state;
 
-            vm[item + 'Value'] = value; // Math.floor(value); //iconMap[value];
-
-            console.log(vm, vm[widgetItem + 'Value']);
+            switch(itemName) {
+                case 'conditionItem':
+                    vm[itemName + 'Value'] = iconMap[value];
+                    break;
+                case 'temperatureItem':
+                case 'humidityItem':
+                case 'windSpeedItem':
+                case 'dewpointItem':
+                case 'pressureItem':
+                    vm[itemName + 'Value'] = parseFloat(value).toFixed(0);
+                    break;
+                default: 
+                    vm[itemName + 'Value'] = value;
+                    break;
+            }
         }
     }
 
@@ -125,8 +136,6 @@
             dewpointItem      : widget.dewpointItem,
             pressureItem      : widget.pressureItem,
             visibilityItem    : widget.visibilityItem,
-            // background     : widget.background,
-            // foreground     : widget.foreground,
             font_size         : widget.font_size,
             animateIcon       : widget.animateIcon
         };

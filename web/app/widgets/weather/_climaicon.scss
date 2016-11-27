@@ -57,9 +57,9 @@ $animationStep: 2;
 $increase: pi() / 100;
 
 $backgroundColor: #111;
-$fontColor: white;
-$strokeColor: white;
-$fillColor: alfa(#fff, .4);
+$fontColor: $widget-text-color;
+$strokeColor: $widget-text-color;
+$fillColor: alfa($widget-text-color, .4);
 $fillOpacity: 0.2;
 
 /* Applies a stroke to the icons. Can use percentage for responsive */
