@@ -16,16 +16,16 @@
     </div>
     <div class="row weather-details">
         <div class="col-md-4">
-            <img src="http://openhabianpi:8080/icon/water?format=svg">
-            <span>{{vm.humidityItemValue}}%</span>
+            <img ng-src="http://openhabianpi:8080/icon/{{vm.firstItemIcon}}?format=svg'">
+            <span>{{vm.firstItemValue}}</span>
         </div>
         <div class="col-md-4">
-            <img src="http://openhabianpi:8080/icon/wind?format=svg">
-            <span>{{vm.windSpeedItemValue}}%</span>
+            <img ng-src="http://openhabianpi:8080/icon/{{vm.secondItemIcon}}?format=svg">
+            <span>{{vm.secondItemValue}}</span>
         </div>
         <div class="col-md-4">
-            <img src="http://openhabianpi:8080/icon/wind?format=svg">
-            <span>{{vm.windSpeedItemValue}}%</span>
+            <img ng-src="http://openhabianpi:8080/icon/{{vm.thirdItemIcon}}?format=svg">
+            <span>{{vm.thirdItemValue}}</span>
         </div>
     </div>
 </div>
