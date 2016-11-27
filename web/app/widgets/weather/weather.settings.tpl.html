@@ -16,7 +16,15 @@
             <div class="form-group" ng-class="{error: _form.conditionItem && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Condition</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.conditionItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.conditionItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search | filter: {type: 'String'}">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
+
                     <span class="help-block">Note: please provide raw condition value from Weather binding (with no map transform)</span>
                 </div>
             </div>
@@ -26,7 +34,14 @@
             <div class="form-group" ng-class="{error: _form.formattedConditionItem && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Formatted Condition</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.formattedConditionItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.formattedConditionItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search | filter: {type: 'String'}">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
                     <span class="help-block">This item will be displayed underneath city name as formatted weather condition (e.g. "Thunderstorms")</span>
                 </div>
             </div>
@@ -34,49 +49,60 @@
             <div class="form-group" ng-class="{error: _form.temperatureItem && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Temperature</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.temperatureItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.temperatureItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search | filter: {type: 'Number'}">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
                 </div>
             </div>
 
-            <div class="form-group" ng-class="{error: _form.humidityItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Humidity</label>
+            <hr>
+            <h4>Additional fields</h4>
+            <span class="help-block">You can put three items there (humidity, wind speed etc). Widget will show their value along with the icon</span>
+
+            <div class="form-group" ng-class="{error: _form.firstItem && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">First item</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.humidityItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.firstItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
                 </div>
             </div>
 
-            <div class="form-group" ng-class="{error: _form.windSpeedItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Wind speed</label>
+            <div class="form-group" ng-class="{error: _form.secondItem && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Second item</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.windSpeedItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.secondItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
                 </div>
             </div>
 
-            <div class="form-group" ng-class="{error: _form.windDirectionItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Wind direction</label>
+            <div class="form-group" ng-class="{error: _form.thirdItem && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Third item</label>
                 <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.windDirectionItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
-                </div>
-            </div>
-
-            <div class="form-group" ng-class="{error: _form.dewpointItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Dewpoint</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.dewpointItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
-                </div>
-            </div>
-
-            <div class="form-group" ng-class="{error: _form.pressureItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Pressure</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.pressureItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
-                </div>
-            </div>
-
-            <div class="form-group" ng-class="{error: _form.visibilityItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Visibility</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.visibilityItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <ui-select ng-model="form.thirdItem">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in items | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search">
+                            </div>
+                            <small ng-bind-html="item.label | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
                 </div>
             </div>
 

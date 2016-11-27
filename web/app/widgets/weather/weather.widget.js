@@ -100,11 +100,13 @@
                     vm[itemName + 'Value'] = iconMap[value];
                     break;
                 case 'temperatureItem':
-                case 'humidityItem':
-                case 'windSpeedItem':
-                case 'dewpointItem':
-                case 'pressureItem':
                     vm[itemName + 'Value'] = parseFloat(value).toFixed(0);
+                    break;
+                case 'firstItem':
+                case 'secondItem':
+                case 'thirdItem':
+                    vm[itemName + 'Value'] = sprintf(item.stateDescription.pattern, value);
+                    vm[itemName + 'Icon'] = item.category || 'text';
                     break;
                 default: 
                     vm[itemName + 'Value'] = value;
