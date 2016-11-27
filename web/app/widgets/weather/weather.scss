@@ -53,4 +53,11 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  white-space: nowrap;
+
+  img {
+    width: 24px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
 }

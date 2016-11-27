@@ -7,7 +7,7 @@
 
         <div class="modal-body">
             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Name</label>
+                <label class="control-label col-lg-3 col-md-3">City name</label>
                 <div class="col-lg-9 col-md-9">
                     <input name="name" type="text" ng-model="form.name" class="form-control" />
                 </div>
@@ -17,6 +17,17 @@
                 <label class="control-label col-lg-3 col-md-3">Condition</label>
                 <div class="col-lg-9 col-md-9">
                     <select ng-model="form.conditionItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <span class="help-block">Note: please provide raw condition value from Weather binding (with no map transform)</span>
+                </div>
+            </div>
+
+            <!-- putting it as a separate setting as there's no option to point
+            map transform from HABpanel -->
+            <div class="form-group" ng-class="{error: _form.formattedConditionItem && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Formatted Condition</label>
+                <div class="col-lg-9 col-md-9">
+                    <select ng-model="form.formattedConditionItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                    <span class="help-block">This item will be displayed underneath city name as formatted weather condition (e.g. "Thunderstorms")</span>
                 </div>
             </div>
 
@@ -24,13 +35,6 @@
                 <label class="control-label col-lg-3 col-md-3">Temperature</label>
                 <div class="col-lg-9 col-md-9">
                     <select ng-model="form.temperatureItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
-                </div>
-            </div>
-
-            <div class="form-group" ng-class="{error: _form.precipitationItem && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Precipitation</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.precipitationItem" ng-options="item.name as item.name for item in items" class="form-control"></select>
                 </div>
             </div>
 
